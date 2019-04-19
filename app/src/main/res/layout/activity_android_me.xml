@@ -37,7 +37,10 @@
         android:layout_height="180dp"
         android:scaleType="centerInside"/>
 
+<<<<<<< Updated upstream
         <!-- The remaining containers for the body and leg BodyPartFragments -->
+=======
+>>>>>>> Stashed changes
         <FrameLayout android:id="@+id/body_container"
             android:layout_width="match_parent"
             android:layout_height="180dp"
@@ -47,7 +50,10 @@
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:scaleType="centerInside"/>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
     </LinearLayout>
 

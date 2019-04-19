@@ -1,18 +1,18 @@
 /*
-* Copyright (C) 2017 The Android Open Source Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*  	http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2017 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *  	http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 package com.example.android.android_me.ui;
 
@@ -28,14 +28,25 @@ import com.example.android.android_me.R;
 
 import java.util.List;
 
+import java.util.List;
+
 public class BodyPartFragment extends Fragment {
 
+<<<<<<< Updated upstream
     // Tag for logging
     private static final String TAG = "BodyPartFragment";
 
     // Variables to store a list of image resources and the index of the image that this fragment displays
     private List<Integer> mImageIds;
     private int mListIndex;
+=======
+    // TODO (1) Create a setter method and class variable to set and store of a list of image resources
+    private List<Integer> imageIds;
+
+    // TODO (2) Create another setter method and variable to track and set the index of the list item to display
+    // ex. index = 0 is the first image id in the given list , index 1 is the second, and so on
+    private int imageIndex;
+>>>>>>> Stashed changes
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the fragment
@@ -55,6 +66,7 @@ public class BodyPartFragment extends Fragment {
         // Get a reference to the ImageView in the fragment layout
         ImageView imageView = (ImageView) rootView.findViewById(R.id.body_part_image_view);
 
+<<<<<<< Updated upstream
         // If a list of image ids exists, set the image resource to the correct item in that list
         // Otherwise, create a Log statement that indicates that the list was not found
         if(mImageIds != null){
@@ -62,12 +74,19 @@ public class BodyPartFragment extends Fragment {
             imageView.setImageResource(mImageIds.get(mListIndex));
         } else {
             Log.v(TAG, "This fragment has a null list of image id's");
+=======
+        // TODO (3) If a list of image ids exists, set the image resource to the correct item in that list
+        // Otherwise, create a Log statement that indicates that the list was not found
+        if (imageIds != null && imageIndex < imageIds.size()) {
+            imageView.setImageResource(imageIds.get(imageIndex));
+>>>>>>> Stashed changes
         }
 
         // Return the rootView
         return rootView;
     }
 
+<<<<<<< Updated upstream
     // Setter methods for keeping track of the list images this fragment can display and which image
     // in the list is currently being displayed
 
@@ -77,6 +96,14 @@ public class BodyPartFragment extends Fragment {
 
     public void setListIndex(int index) {
         mListIndex = index;
+=======
+    public void setImageIds(List<Integer> imageIds) {
+        this.imageIds = imageIds;
+    }
+
+    public void setImageIndex(int imageIndex) {
+        this.imageIndex = imageIndex;
+>>>>>>> Stashed changes
     }
 
 }
