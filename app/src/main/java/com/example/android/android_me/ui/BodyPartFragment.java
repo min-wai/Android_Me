@@ -1,18 +1,18 @@
 /*
-* Copyright (C) 2017 The Android Open Source Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*  	http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2017 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *  	http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 package com.example.android.android_me.ui;
 
@@ -31,9 +31,15 @@ import java.util.List;
 
 public class BodyPartFragment extends Fragment {
 
+<<<<<<< Updated upstream
     // Final Strings to store state information about the list of images and list index
     public static final String IMAGE_ID_LIST = "image_ids";
     public static final String LIST_INDEX = "list_index";
+=======
+    // TODO (3) Create final Strings to store state information about the list of images and list index
+    public static final String IMAGE_IDS = "imageIds";
+    public static final String LIST_INDEX = "listIndex";
+>>>>>>> Stashed changes
 
     // Tag for logging
     private static final String TAG = "BodyPartFragment";
@@ -53,6 +59,11 @@ public class BodyPartFragment extends Fragment {
      */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Load the saved state (the list of images and list index) if there is one
+        if (savedInstanceState != null) {
+            mImageIds = savedInstanceState.getIntegerArrayList(IMAGE_IDS);
+            mListIndex = savedInstanceState.getInt(LIST_INDEX);
+        }
 
         // Load the saved state (the list of images and list index) if there is one
         if(savedInstanceState != null) {
@@ -68,10 +79,11 @@ public class BodyPartFragment extends Fragment {
 
         // If a list of image ids exists, set the image resource to the correct item in that list
         // Otherwise, create a Log statement that indicates that the list was not found
-        if(mImageIds != null){
+        if (mImageIds != null && mListIndex < mImageIds.size()) {
             // Set the image resource to the list item at the stored index
             imageView.setImageResource(mImageIds.get(mListIndex));
 
+<<<<<<< Updated upstream
             // Set a click listener on the image view
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -84,6 +96,14 @@ public class BodyPartFragment extends Fragment {
                         mListIndex = 0;
                     }
                     // Set the image resource to the new list item
+=======
+            // TODO (1) Set a click listener on the image view and on a click increment the list index and set the image resource
+            // TODO (2) If you reach the end of a list of images, set the list index back to 0 (the first item in the list)
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mListIndex = (mListIndex + 1) % mImageIds.size();
+>>>>>>> Stashed changes
                     imageView.setImageResource(mImageIds.get(mListIndex));
                 }
             });
@@ -107,6 +127,7 @@ public class BodyPartFragment extends Fragment {
         mListIndex = index;
     }
 
+<<<<<<< Updated upstream
     /**
      * Save the current state of this fragment
      */
@@ -117,4 +138,14 @@ public class BodyPartFragment extends Fragment {
     }
 
 
+=======
+    // TODO (4) Override onSaveInstanceState and save the current state of this fragment
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putIntegerArrayList(IMAGE_IDS, (ArrayList<Integer>) mImageIds);
+        outState.putInt(LIST_INDEX, mListIndex);
+        super.onSaveInstanceState(outState);
+    }
+>>>>>>> Stashed changes
 }
