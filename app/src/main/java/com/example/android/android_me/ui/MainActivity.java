@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /*
 * Copyright (C) 2017 The Android Open Source Project
 *
@@ -14,10 +15,13 @@
 * limitations under the License.
 */
 
+=======
+>>>>>>> Stashed changes
 package com.example.android.android_me.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+<<<<<<< Updated upstream
 
 import com.example.android.android_me.R;
 
@@ -25,14 +29,36 @@ import com.example.android.android_me.R;
 // TODO (4) Implement the MasterListFragment callback, OnImageClickListener
 public class MainActivity extends AppCompatActivity {
 
+=======
+import android.widget.Toast;
+
+import com.example.android.android_me.R;
+
+import java.util.Locale;
+
+public class MainActivity extends AppCompatActivity implements MasterListFragment.OnImageClickListener {
+>>>>>>> Stashed changes
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+<<<<<<< Updated upstream
     }
 
+<<<<<<< Updated upstream
     // TODO (5) Define the behavior for onImageSelected; create a Toast that displays the position clicked
 
+=======
+=======
+
+    }
+
+    @Override
+    public void onImageClicked(int position) {
+        Toast.makeText(this, String.format(new Locale("en"), "Position %d is clicked!", position), Toast.LENGTH_SHORT).show();
+    }
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 }

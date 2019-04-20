@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< Updated upstream
 <!--Copyright (C) 2017 The Android Open Source Project
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -16,6 +17,12 @@
     android:id="@+id/images_grid_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+=======
+<GridView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gridView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+>>>>>>> Stashed changes
     android:adjustViewBounds="true"
     android:columnWidth="180dp"
     android:gravity="center"
@@ -23,5 +30,9 @@
     android:numColumns="3"
     android:padding="16dp"
     android:stretchMode="columnWidth"
+<<<<<<< Updated upstream
     android:verticalSpacing="8dp">
 </GridView>
+=======
+    android:verticalSpacing="8dp" />
+>>>>>>> Stashed changes
